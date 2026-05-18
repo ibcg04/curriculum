@@ -10,7 +10,9 @@
 <body>
     <header>
         <h1>Iván Benjamín Cedeño Gonzabay</h1>
-        <img src="benja.jpg" alt="Foto de perfil" width="150">
+        <figure>    
+            <img src="benja.jpg" alt="Foto de perfil" width="150">
+        </figure>
     </header>
     <section id="contacto">
         <h2>Contacto</h2>
@@ -53,9 +55,9 @@
 
     <section id="experiencia">
         <h2>Experiencia</h2>
-        <p><strong>Desarrollador Jr - ControlIQ GHOU</strong></p>
+        <p><strong>Desarrollador Jr - ControlIQ</strong></p>
         <p>Encargado de soporte N2, revisión de logs, resolución de incidencias y pequeñas correcciones en el sistema
-            para mantener la estabilidad y funcionamiento de las aplicaciones.</p>
+            para mantener la estabilidad y funcionamiento de las aplicaciones como GHOU.</p>
     </section>
 
     <section id="educacion">
@@ -85,6 +87,9 @@
             <h3>NASA Space Apps Challenge (Hackatón, Ganador)</h3>
             <p><em>Octubre 2025</em></p>
             <p>Participé en el desarrollo de una plataforma web para visualizar la calidad del aire en tiempo real, integrando APIs ambientales y construyendo componentes interactivos que mejoraron la experiencia de usuario y la claridad en la presentación de datos.</p>
+            <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;margin-top:10px;">
+                <iframe src="https://www.youtube.com/embed/1J4cngHhnuI" title="NASA Space Apps" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
         </article>
 
         <article>
@@ -96,7 +101,23 @@
 
     <section id="referencias">
         <h2>Referencias</h2>
+        <p>Cristian Peña | CTO. COntrolIQ | 0987654321.</p>
     </section>
+    
+    <section id="contactame" style="padding:20px; border-top:1px solid #ccc;">
+        <h2>Contáctame</h2>
+        <form id="contact-form" action="mailto:ivancede@espol.edu.ec" method="post" enctype="text/plain">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="Nombre" required><br><br>
+            <label for="correo">Correo:</label><br>
+            <input type="email" id="correo" name="Correo" required><br><br>
+            <label for="mensaje">Mensaje:</label><br>
+            <textarea id="mensaje" name="Mensaje" rows="6" required></textarea><br><br>
+            <button type="submit">Enviar</button>
+        </form>
+        <p style="font-size:0.9em;color:#555;">Nota: Al hacer clic en "Enviar" se abrirá tu cliente de correo predeterminado para enviar el mensaje.</p>
+    </section>
+
 </body>
 
 </html>
