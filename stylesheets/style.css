@@ -4,7 +4,7 @@
 /* Make sizing predictable (prevents grid overflow issues) */
 *, *::before, *::after { box-sizing: border-box; }
 body{
-    background-color: rgb(75, 75, 158);
+    background-color: rgb(140, 140, 217);
     
 }
 
@@ -13,30 +13,14 @@ h1{
     font-weight: bold;
     color: rgba(255, 255, 255, 0.932);  
 }
-#photo {
-    width: 24vw;
-    height: auto;
-    border-radius: 50%;
+
+section {
+    background-color: rgb(228, 217, 217);
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-#photo-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.projects-evidence {
-    width: 45%;
-    height: 310px;
-    border: none;
-    margin-top: 10px;
-}
-
-.subtitle {
-    color: rgba(0, 0, 0, 0.89);
-    text-transform: uppercase;
-    font-weight: bold;
-}
 
 footer p {
 
@@ -51,6 +35,37 @@ nav > ul {
 
 }
 
+/* Seccion de Acerca de mi */
+
+#photo {
+    width: 24vw;
+    height: auto;
+    border-radius: 50%;
+}
+
+#photo-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Seccion de Proyectos IFRAME*/
+
+.projects-evidence {
+    width: 45%;
+    height: 310px;
+    border: none;
+    margin-top: 10px;
+}
+
+.subtitle {
+    color: rgba(0, 0, 0, 0.89);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+
+/* Seccion de NAVEGACION */
 
 html { scroll-behavior: smooth; }
 
@@ -98,7 +113,24 @@ html { scroll-behavior: smooth; }
     padding: 24px;
 }
 
-/* Contact list icons */
+
+section > form {
+
+    /* Activa el modelo de diseño basado en cuadrícula */
+    display: grid;
+
+    /* Define una sola columna que ocupa todo el ancho disponible del contenedor */
+    grid-template-columns: 1fr;
+
+    /* Establece un espacio vertical uniforme de 1rem entre filas */
+    row-gap: 1rem;
+
+    /* Establece un espacio horizontal uniforme de 1rem entre columnas */
+    column-gap: 1rem;
+
+}
+
+/* SECCION DE CONTACTAME*/
 .contact-list {
     list-style: none;
     padding: 0;
@@ -125,12 +157,6 @@ html { scroll-behavior: smooth; }
     text-decoration: underline;
 }
 
-section {
-    background-color: rgb(228, 217, 217);
-    margin: 20px 0;
-    padding: 20px;
-    border-radius: 8px;
-}
 
 .contact-section{
     background-color: rgb(228, 217, 217);
@@ -197,4 +223,27 @@ section {
 @media (max-width: 820px) {
     .contact-container { grid-template-columns: 1fr; }
     .contact-form .form-grid { grid-template-columns: 1fr; }
+}
+
+.refe {
+    font-weight: bold;
+    color: #333;
+    background-color: #fdfdfd;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#referencias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+#referencias > h2 {
+    flex: 0 0 100%; 
+}
+
+#referencias > article {
+    flex: 1 1 calc(33.333% - 1rem); 
+    min-width: 0;
 }
