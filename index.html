@@ -9,11 +9,16 @@
 </head>
 
 <body>
-    <header>
-        <h1>Iván Benjamín Cedeño Gonzabay</h1>
-        <figure id="photo-container">    
-            <img id="photo" src="benja.jpg" alt="Foto de perfil" width="150">
-        </figure>
+    <header class="site-header">
+        <div class="header-inner">
+            <figure id="photo-container">
+                <img id="photo" src="benja.jpg" alt="Foto de perfil">
+            </figure>
+            <div class="header-info">
+                <h1>Iván Benjamín Cedeño Gonzabay</h1>
+                <p class="header-role">Estudiante — Ingeniería en Ciencias de la Computación</p>
+            </div>
+        </div>
     </header>
     <nav class="main-nav" aria-label="Navegación del currículum">
         <ul>
@@ -28,6 +33,7 @@
             <li><a href="#contactame">Contáctame</a></li>
         </ul>
     </nav>
+    <main>
     <section id="contacto">
         <h2 class="subtitle">Contacto</h2>
         <ul class="contact-list">
@@ -71,23 +77,30 @@
 
     <section id="experiencia">
         <h2 class="subtitle">Experiencia</h2>
-        <p><strong>Desarrollador Jr - ControlIQ</strong></p>
+        <p><strong><img src="images/ciq2.jpg" alt="ControlIQ" width="40" height="40" class="org-logo">Desarrollador Jr - ControlIQ</strong></p>
         <p>Encargado de soporte N2, revisión de logs, resolución de incidencias y pequeñas correcciones en el sistema
             para mantener la estabilidad y funcionamiento de las aplicaciones como GHOU.</p>
     </section>
 
     <section id="educacion">
         <h2 class="subtitle">Educación</h2>
-        <p><strong>Escuela Superior Politécnica del Litoral (ESPOL) - Ingeniería en Ciencias de la Computación</strong></p>
-        <p><em>2024 - Actualidad</em></p>
-        <p>Materias relevantes: Estructuras de Datos; Programación de Sistemas; Programación Orientada a Objetos; Diseño
-            de Software; Sistema de Bases de Datos; Desarrollo de Aplicaciones Web y Móviles; Lenguajes de Programación.
-        </p>
+        <div class="education-container">
+            <div class="education-content">
+                <p><strong>Escuela Superior Politécnica del Litoral (ESPOL) - Ingeniería en Ciencias de la Computación</strong></p>
+                <p><em>2024 - Actualidad</em></p>
+                <p>Materias relevantes: Estructuras de Datos; Programación de Sistemas; Programación Orientada a Objetos; Diseño
+                    de Software; Sistema de Bases de Datos; Desarrollo de Aplicaciones Web y Móviles; Lenguajes de Programación.
+                </p>
+            </div>
+            <aside class="education-map" aria-label="Mapa del campus ESPOL">
+                <iframe title="Mapa ESPOL - Campus Gustavo Galindo Velasco" src="https://maps.google.com/maps?q=Campus+Gustavo+Galindo+Velasco+ESPOL&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </aside>
+        </div>
     </section>
 
     <section id="actividades">
         <h2 class="subtitle">Actividades</h2>
-        <p>TAWS (ESPOL)- Miembro activo</p>
+        <p><img src="images/taws.png" alt="TAWS" class="org-logo">TAWS (ESPOL) - Miembro activo</p>
         <p>Participación en iniciativas de ciencia de datos y sostenibilidad tecnológica</p>
     </section>
 
@@ -122,13 +135,13 @@
     <section id="referencias">
         <h2 class="subtitle">Referencias</h2>
         <article>
-            <p class="refe">Cristian Peña | CTO. ControlIQ | 0987654321.</p>
+            <p class="refe">Cristian Peña | CTO. ControlIQ | 0983891665.</p>
         </article>
         <article>
             <p class="refe">PhD. Carmen Vaca | Docente ESPOL | cvaca@fiec.espol.edu.ec</p>
         </article>
         <article>
-            <p class="refe">REFERENCIA 3</p>
+            <p class="refe">Lodoiska Bergelund | Directora de Ministerio de niños Iglesia Galilea </p>
         </article>
     </section>
     
@@ -166,6 +179,10 @@
         </div>
     </section>
 
+    <footer>
+        <p style="text-align:center; color:#222; font-size:0.9rem; margin-top:12px;">© Iván Benjamín Cedeño Gonzabay — Currículum</p>
+    </footer>
+    </main>
 </body>
 
 </html>
