@@ -1,205 +1,302 @@
 <!doctype html>
-<html lang="es" class="site-wrapper">
+<html lang="es" data-theme="dark">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Currículum</title>
-    <link rel="stylesheet" href="stylesheets/style.css">
+    <title>Iván Cedeño | Currículum</title>
+    <meta name="description" content="Currículum de Iván Benjamín Cedeño Gonzabay — Estudiante de Ingeniería en Ciencias de la Computación (ESPOL). Desarrollador web y móvil, ganador de NASA Space Apps.">
+    <meta name="theme-color" content="#0b1226">
+
+    <!-- Open Graph / vista previa al compartir (LinkedIn, WhatsApp) -->
+    <!-- TODO: cuando publiques el sitio, reemplaza URL_DEL_SITIO por la URL real (ej. https://ibcg04.github.io/curriculum/) -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Iván Cedeño — Currículum">
+    <meta property="og:description" content="Estudiante de Ingeniería en Ciencias de la Computación (ESPOL). Desarrollo web y móvil · Ganador NASA Space Apps y AgroFuturo.">
+    <meta property="og:image" content="URL_DEL_SITIO/benja.jpg">
+    <meta property="og:url" content="URL_DEL_SITIO/">
+    <meta property="og:locale" content="es_EC">
+    <meta name="twitter:card" content="summary">
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1'%3E%3Cstop offset='0' stop-color='%2306b6d4'/%3E%3Cstop offset='1' stop-color='%237c3aed'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='url(%23g)'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='800' font-size='28' fill='white' text-anchor='middle'%3EIC%3C/text%3E%3C/svg%3E">
+
+    <!-- Aplica el tema guardado antes de pintar (evita parpadeo) -->
+    <script>
+        (function () {
+            var t = localStorage.getItem('theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css?v=3">
+    <script src="scripts/main.js?v=3" defer></script>
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="header-inner">
-            <figure id="photo-container">
-                <img id="photo" src="benja.jpg" alt="Foto de perfil">
-            </figure>
-            <div class="header-info">
-                <h1>Iván Benjamín Cedeño Gonzabay</h1>
-                <p class="header-role">Estudiante — Ingeniería en Ciencias de la Computación</p>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <nav class="navbar" aria-label="Navegación principal">
+        <div class="nav-inner">
+            <a href="#inicio" class="brand"><span class="brand-mark">IC</span><span class="brand-text">Iván Cedeño</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#resumen" data-en="Summary">Resumen</a></li>
+                <li><a href="#habilidades" data-en="Skills">Habilidades</a></li>
+                <li><a href="#experiencia" data-en="Experience">Experiencia</a></li>
+                <li><a href="#educacion" data-en="Education">Educación</a></li>
+                <li><a href="#actividades" data-en="Activities">Actividades</a></li>
+                <li><a href="#proyectos" data-en="Projects">Proyectos</a></li>
+                <li><a href="#referencias" data-en="References">Referencias</a></li>
+                <li><a href="#contactame" class="nav-cta" data-en="Contact me">Contáctame</a></li>
+            </ul>
+            <div class="nav-tools">
+                <button class="tool-btn lang-btn" type="button" aria-label="Cambiar idioma / Change language">EN</button>
+                <button class="tool-btn theme-btn" type="button" aria-label="Cambiar tema claro/oscuro">
+                    <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"/></svg>
+                    <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                </button>
+                <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
+        </div>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="blob blob-1" aria-hidden="true"></div>
+        <div class="blob blob-2" aria-hidden="true"></div>
+        <div class="hero-inner">
+            <figure class="photo-wrap">
+                <picture>
+                    <source srcset="images/benja.webp" type="image/webp">
+                    <img id="photo" src="benja.jpg" alt="Foto de Iván Cedeño" width="190" height="190">
+                </picture>
+            </figure>
+            <div class="hero-info">
+                <span class="badge"><span class="dot"></span> <span data-en="Open to internships">Disponible para prácticas</span></span>
+                <h1>Iván Benjamín <span class="gradient-text">Cedeño Gonzabay</span></h1>
+                <p class="hero-role"><span data-en="Computer Science Engineering Student">Estudiante de Ingeniería en Ciencias de la Computación</span> · <span class="typed" data-words="Desarrollador Web|React & React Native|Ganador NASA Space Apps|Java & Python" data-words-en="Web Developer|React & React Native|NASA Space Apps Winner|Java & Python"></span></p>
+                <ul class="hero-contact" id="contacto">
+                    <li><a href="mailto:ivancede@espol.edu.ec"><img src="images/mail.png" alt="" width="18" height="18">ivancede@espol.edu.ec</a></li>
+                    <li><a href="tel:+593964130057"><img src="images/phone.svg" alt="" width="18" height="18">+593 96 413 0057</a></li>
+                    <li><a href="https://www.linkedin.com/in/ivancedenog/" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="" width="18" height="18">LinkedIn</a></li>
+                    <li><a href="https://github.com/ibcg04" target="_blank" rel="noopener"><img src="images/github.png" alt="" width="18" height="18">GitHub</a></li>
+                </ul>
+                <div class="hero-actions">
+                    <a href="#proyectos" class="btn btn-primary" data-en="View projects">Ver proyectos</a>
+                    <button type="button" class="btn btn-ghost print-btn">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-5-5m5 5l5-5M4 21h16"/></svg>
+                        <span data-en="Download CV (PDF)">Descargar CV (PDF)</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat reveal"><strong data-count="2">0</strong><span data-en="Hackathons won">Hackatones ganadas</span></div>
+            <div class="stat reveal"><strong data-count="3">0</strong><span data-en="Featured projects">Proyectos destacados</span></div>
+            <div class="stat reveal"><strong data-count="10" data-suffix="+">0</strong><span data-en="Technologies">Tecnologías</span></div>
         </div>
     </header>
-    <nav class="main-nav" aria-label="Navegación del currículum">
-        <ul>
-            <li><a href="#contacto">Contacto</a></li>
-            <li><a href="#resumen">Resumen</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#experiencia">Experiencia</a></li>
-            <li><a href="#educacion">Educación</a></li>
-            <li><a href="#actividades">Actividades</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#referencias">Referencias</a></li>
-            <li><a href="#contactame">Contáctame</a></li>
-        </ul>
-    </nav>
-    <main>
-    <section id="contacto">
-        <h2 class="subtitle">Contacto</h2>
-        <ul class="contact-list">
-            <li><img src="images/mail.png" alt="Email" class="contact-icon">Correo electrónico: <a href="mailto:ivancede@espol.edu.ec">ivancede@espol.edu.ec</a></li>
-            <li><img src="images/phone.svg" alt="Teléfono" class="contact-icon">Teléfono: <a href="tel:+593964130057">+593 96 413 0057</a></li>
-            <li><img src="images/linkedin.png" alt="LinkedIn" class="contact-icon">LinkedIn: <a href="https://www.linkedin.com/in/ivancedenog/">ivancedenog</a></li>
-            <li><img src="images/github.png" alt="GitHub" class="contact-icon">GitHub: <a href="https://github.com/ibcg04">ibcg04</a></li>
-        </ul>
 
-    </section>
+    <main class="container">
+        <section id="resumen" class="card reveal">
+            <h2 class="subtitle" data-en="Summary">Resumen</h2>
+            <p class="lead" data-en="Computer Science Engineering student at ESPOL with a solid background in data structures, programming and databases. I have taken part in building technology solutions in hackathons and academic projects, standing out for my analytical skills, problem solving and teamwork. I am driven to build efficient, scalable software that creates real impact and adds value through technology.">
+                Estudiante de Ingeniería en Ciencias de la Computación en la ESPOL, con sólida formación en estructuras
+                de datos, programación y bases de datos. He participado en el desarrollo de soluciones tecnológicas en
+                hackatones y proyectos académicos, destacándome por mi capacidad analítica, resolución de problemas y
+                trabajo en equipo. Me motiva construir software eficiente y escalable que genere impacto real y aporte valor
+                a través de la tecnología.</p>
+        </section>
 
-    <section id="resumen">
-        <h2 class="subtitle">Resumen</h2>
-        <p>
-            Estudiante de Ingeniería en Ciencias de la Computación en la ESPOL, con sólida formación en estructuras
-            de datos, programación y bases de datos. He participado en el desarrollo de soluciones tecnológicas en
-            hackatones y proyectos académicos, destacándome por mi capacidad analítica, resolución de problemas y
-            trabajo en equipo. Me motiva construir software eficiente y escalable que genere impacto real y aporte valor
-            a través de la tecnología.</p>
-    </section>
-
-    <section id="habilidades">
-        <h2 class="subtitle">Habilidades</h2>
-        <h3>Técnicas</h3>
-        <ul>
-            <li><strong>Lenguajes:</strong> Java, Python, JavaScript</li>
-            <li><strong>Web y Móvil:</strong> HTML, CSS, React, React Native</li>
-            <li><strong>Bases de Datos:</strong> MySQL, MongoDB</li>
-            <li><strong>Sistemas Operativos:</strong> Windows, Linux</li>
-            <li><strong>Control de Versiones:</strong> Git, GitHub</li>
-            <li><strong>Herramientas:</strong> Microsoft Excel, Word, PowerPoint</li>
-            <li><strong>Idiomas:</strong> Español (Nativo), Inglés (B2 – Intermedio)</li>
-        </ul>
-        <h3>Blandas</h3>
-        <ul>
-            <li>Comunicación efectiva</li>
-            <li>Trabajo en equipo</li>
-            <li>Resolución de problemas</li>
-        </ul>
-    </section>
-
-    <section id="experiencia">
-        <h2 class="subtitle">Experiencia</h2>
-        <p><strong><img src="images/ciq2.jpg" alt="ControlIQ" width="40" height="40" class="org-logo">Desarrollador Jr. - ControlIQ</strong></p>
-        <p><ul>
-            <li>Instalación y configuración de servicios de trazabilidad para el monitoreo y registro de eventos del sistema.</li>
-            <li>Instalación, configuración y puesta en funcionamiento de dispositivos y servicios de reconocimiento facial.</li>
-            <li>Atención y resolución de incidencias técnicas de nivel 2, incluyendo diagnóstico de errores, revisión de configuraciones y soporte a dispositivos.</li>
-            <li>Desarrollo de scripts y herramientas para automatizar tareas de mantenimiento y monitoreo del sistema.</li>
-            <li>Capacitación a usuarios y personal técnico sobre el funcionamiento del sistema de control de acceso.</li>
-        </ul></p>
-    </section>
-
-    <section id="educacion">
-        <h2 class="subtitle">Educación</h2>
-        <div class="education-container">
-            <div class="education-content">
-                <p><strong>Escuela Superior Politécnica del Litoral (ESPOL) - Ingeniería en Ciencias de la Computación</strong></p>
-                <p><em>2024 - Actualidad</em></p>
-                <p>Materias relevantes: 
-                    <ul>
-                        <li>Estructuras de Datos</li>
-                        <li>Programación de Sistemas</li>
-                        <li>Programación Orientada a Objetos</li>
-                        <li>Diseño de Software</li>
-                        <li>Sistema de Bases de Datos</li>
-                        <li>Desarrollo de Aplicaciones Web y Móviles</li>
-                        <li>Lenguajes de Programación</li>
+        <section id="habilidades" class="card reveal">
+            <h2 class="subtitle" data-en="Skills">Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-group"><h3 data-en="Languages">Lenguajes</h3><ul class="chips"><li>Java</li><li>Python</li><li>JavaScript</li></ul></div>
+                <div class="skill-group"><h3 data-en="Web &amp; Mobile">Web y Móvil</h3><ul class="chips"><li>HTML</li><li>CSS</li><li>React</li><li>React Native</li></ul></div>
+                <div class="skill-group"><h3 data-en="Databases">Bases de Datos</h3><ul class="chips"><li>MySQL</li><li>MongoDB</li></ul></div>
+                <div class="skill-group"><h3 data-en="Operating Systems">Sistemas Operativos</h3><ul class="chips"><li>Windows</li><li>Linux</li></ul></div>
+                <div class="skill-group"><h3 data-en="Version Control">Control de Versiones</h3><ul class="chips"><li>Git</li><li>GitHub</li></ul></div>
+                <div class="skill-group"><h3 data-en="Tools">Herramientas</h3><ul class="chips"><li>Excel</li><li>Word</li><li>PowerPoint</li></ul></div>
+            </div>
+            <div class="skills-grid two">
+                <div class="skill-group">
+                    <h3 data-en="Spoken languages">Idiomas</h3>
+                    <div class="lang"><span data-en="Spanish">Español</span><small data-en="Native">Nativo</small><div class="bar"><i style="--w:100%"></i></div></div>
+                    <div class="lang"><span data-en="English">Inglés</span><small data-en="B2 – Upper intermediate">B2 – Intermedio</small><div class="bar"><i style="--w:70%"></i></div></div>
+                </div>
+                <div class="skill-group">
+                    <h3 data-en="Soft skills">Blandas</h3>
+                    <ul class="chips soft">
+                        <li data-en="Effective communication">Comunicación efectiva</li>
+                        <li data-en="Teamwork">Trabajo en equipo</li>
+                        <li data-en="Problem solving">Resolución de problemas</li>
                     </ul>
-                </p>
+                </div>
             </div>
-            <aside class="education-map" aria-label="Mapa del campus ESPOL">
-                <iframe title="Mapa ESPOL - Campus Gustavo Galindo Velasco" src="https://maps.google.com/maps?q=Campus+Gustavo+Galindo+Velasco+ESPOL&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </aside>
-        </div>
-    </section>
+        </section>
 
-    <section id="actividades">
-        <h2 class="subtitle">Actividades</h2>
-        <p><img src="images/taws.png" alt="TAWS" class="org-logo">TAWS (ESPOL) - Miembro activo</p>
-        <p><ul>
-            <li>Participación en proyectos de desarrollo de software y aplicaciones web</li>
-            <li>Participación en iniciativas de ciencia de datos y sostenibilidad tecnológica</li>
-            <li>Colaboración en la organización de eventos y talleres de programación</li>
-        </ul></p>
-    </section>
-
-    <section id="proyectos">
-        <h2 class="subtitle">Proyectos</h2>
-        <article>
-            <h3>Proyecto Académico – Sistema de Red de Vuelos (Java)</h3>
-            <p><em>Agosto 2025</em></p>
-            <p>Desarrollé un sistema de red de vuelos mediante grafos, aplicando el algoritmo de Dijkstra para la obtención de la ruta más eficiente entre aeropuertos. Este proyecto fortaleció mis habilidades en el paradigma de programación orientado a objetos y en el manejo de estructuras de datos, así como en el análisis de complejidad algorítmica.</p>
-        </article>
-
-        <article>
-            <h3>NASA Space Apps Challenge (Hackatón, Ganador)</h3>
-            <p><em>Octubre 2025</em></p>
-            <p>Participé en el desarrollo de una plataforma web para visualizar la calidad del aire en tiempo real, integrando APIs ambientales y construyendo componentes interactivos que mejoraron la experiencia de usuario y la claridad en la presentación de datos.</p>
-            <div>
-                <iframe class="projects-evidence" src="https://www.youtube.com/embed/1J4cngHhnuI" title="NASA Space Apps" ></iframe>
-                <iframe class="projects-evidence" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7385775476788854784?collapsed=1" height="300" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <section id="experiencia" class="card reveal">
+            <h2 class="subtitle" data-en="Experience">Experiencia</h2>
+            <div class="timeline">
+                <article class="timeline-item">
+                    <div class="item-head">
+                        <img src="images/ciq2.jpg" alt="Logo ControlIQ" class="org-logo" width="52" height="52">
+                        <div>
+                            <h3 data-en="Junior Developer">Desarrollador Jr.</h3>
+                            <!-- TODO: reemplaza "2025" por tu fecha real de inicio (ej. "Mar 2025") -->
+                            <p class="meta">ControlIQ · <span data-en="2025 – Present">2025 – Actualidad</span></p>
+                        </div>
+                    </div>
+                    <!-- TODO: si tienes cifras reales, agrégalas (ej. "reduciendo un 40% el tiempo de mantenimiento") -->
+                    <ul class="bullets">
+                        <li data-en="Installed and configured traceability services for monitoring and logging system events.">Instalación y configuración de servicios de trazabilidad para el monitoreo y registro de eventos del sistema.</li>
+                        <li data-en="Installed, configured and deployed facial recognition devices and services.">Instalación, configuración y puesta en funcionamiento de dispositivos y servicios de reconocimiento facial.</li>
+                        <li data-en="Handled and resolved level-2 technical incidents, including error diagnosis, configuration review and device support.">Atención y resolución de incidencias técnicas de nivel 2, incluyendo diagnóstico de errores, revisión de configuraciones y soporte a dispositivos.</li>
+                        <li data-en="Built scripts and tools to automate system maintenance and monitoring tasks.">Desarrollo de scripts y herramientas para automatizar tareas de mantenimiento y monitoreo del sistema.</li>
+                        <li data-en="Trained users and technical staff on how the access control system works.">Capacitación a usuarios y personal técnico sobre el funcionamiento del sistema de control de acceso.</li>
+                    </ul>
+                </article>
             </div>
-        </article>
+        </section>
 
-        <article>
-            <h3>Hackatón AgroFuturo (Hackatón, Ganador)</h3>
-            <p><em>Noviembre 2025</em></p>
-            <p>Participé en el desarrollo del frontend de una aplicación móvil en React Native, diseñada para conectar agricultores, inversores y compradores en una sola plataforma, facilitando la interacción entre los actores y promoviendo mayor transparencia en el acceso a oportunidades y precios.</p>
-            <div>
-                <iframe class="projects-evidence" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7401651978084442113?collapsed=1" height="627" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+        <section id="educacion" class="card reveal">
+            <h2 class="subtitle" data-en="Education">Educación</h2>
+            <div class="education-container">
+                <div>
+                    <h3>Escuela Superior Politécnica del Litoral (ESPOL)</h3>
+                    <p class="meta" data-en="Computer Science Engineering · 2024 – Present">Ingeniería en Ciencias de la Computación · 2024 – Actualidad</p>
+                    <p data-en="Relevant coursework:">Materias relevantes:</p>
+                    <ul class="chips">
+                        <li data-en="Data Structures">Estructuras de Datos</li>
+                        <li data-en="Systems Programming">Programación de Sistemas</li>
+                        <li data-en="Object-Oriented Programming">Programación Orientada a Objetos</li>
+                        <li data-en="Software Design">Diseño de Software</li>
+                        <li data-en="Database Systems">Sistema de Bases de Datos</li>
+                        <li data-en="Web &amp; Mobile App Development">Desarrollo de Aplicaciones Web y Móviles</li>
+                        <li data-en="Programming Languages">Lenguajes de Programación</li>
+                    </ul>
+                </div>
+                <aside class="education-map" aria-label="Mapa del campus ESPOL">
+                    <iframe title="Mapa ESPOL - Campus Gustavo Galindo Velasco" src="https://maps.google.com/maps?q=Campus+Gustavo+Galindo+Velasco+ESPOL&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </aside>
             </div>
-        </article>
-    </section>
+        </section>
 
-    <section id="referencias">
-        <h2 class="subtitle">Referencias</h2>
-        <article>
-            <p class="refe">Cristian Peña | CTO. ControlIQ | 0983891665.</p>
-        </article>
-        <article>
-            <p class="refe">PhD. Carmen Vaca | Docente ESPOL | cvaca@fiec.espol.edu.ec</p>
-        </article>
-        <article>
-            <p class="refe">Lodoiska Bergelund | Directora de Ministerio de niños Iglesia Galilea | 0988883700</p>
-        </article>
-    </section>
-    
-    <section id="contactame" class="contact-section">
-        <div class="contact-container">
-            <div class="contact-form-card">
-                <h2 class="subtitle">Contáctame</h2>
-                <form id="contact-form" action="mailto:ivancede@espol.edu.ec" method="post" enctype="text/plain" class="contact-form" novalidate>
+        <section id="actividades" class="card reveal">
+            <h2 class="subtitle" data-en="Activities">Actividades</h2>
+            <div class="item-head">
+                <img src="images/taws.png" alt="Logo TAWS" class="org-logo" width="52" height="52">
+                <div>
+                    <h3>TAWS (ESPOL)</h3>
+                    <p class="meta" data-en="Active member">Miembro activo</p>
+                </div>
+            </div>
+            <ul class="bullets">
+                <li data-en="Took part in software and web application development projects.">Participación en proyectos de desarrollo de software y aplicaciones web.</li>
+                <li data-en="Took part in data science and technological sustainability initiatives.">Participación en iniciativas de ciencia de datos y sostenibilidad tecnológica.</li>
+                <li data-en="Helped organize programming events and workshops.">Colaboración en la organización de eventos y talleres de programación.</li>
+            </ul>
+        </section>
+
+        <section id="proyectos" class="reveal">
+            <h2 class="subtitle light" data-en="Projects">Proyectos</h2>
+            <div class="projects-grid">
+                <article class="project card">
+                    <span class="tag" data-en="Academic">Académico</span>
+                    <h3 data-en="Flight Network System (Java)">Sistema de Red de Vuelos (Java)</h3>
+                    <p class="meta" data-en="August 2025">Agosto 2025</p>
+                    <p data-en="Built a flight network system using graphs, applying Dijkstra's algorithm to find the most efficient route between airports. This project strengthened my object-oriented programming and data structure skills, as well as algorithmic complexity analysis.">Desarrollé un sistema de red de vuelos mediante grafos, aplicando el algoritmo de Dijkstra para la obtención de la ruta más eficiente entre aeropuertos. Este proyecto fortaleció mis habilidades en el paradigma de programación orientado a objetos y en el manejo de estructuras de datos, así como en el análisis de complejidad algorítmica.</p>
+                    <ul class="chips small"><li>Java</li><li data-en="Graphs">Grafos</li><li>Dijkstra</li></ul>
+                    <div class="project-links">
+                        <!-- TODO: cambia el enlace por el repositorio exacto del proyecto -->
+                        <a href="https://github.com/ibcg04?tab=repositories" target="_blank" rel="noopener" class="link-github"><img src="images/github.png" alt="" width="18" height="18"><span data-en="View code">Ver código</span></a>
+                    </div>
+                </article>
+
+                <article class="project card">
+                    <span class="tag win" data-en="🏆 Winner">🏆 Ganador</span>
+                    <h3>NASA Space Apps Challenge</h3>
+                    <p class="meta" data-en="October 2025">Octubre 2025</p>
+                    <p data-en="Helped build a web platform to visualize real-time air quality, integrating environmental APIs and creating interactive components that improved user experience and data clarity.">Participé en el desarrollo de una plataforma web para visualizar la calidad del aire en tiempo real, integrando APIs ambientales y construyendo componentes interactivos que mejoraron la experiencia de usuario y la claridad en la presentación de datos.</p>
+                    <ul class="chips small"><li>Web</li><li>APIs</li><li data-en="Data viz">Visualización</li></ul>
+                    <div class="project-links">
+                        <a href="https://github.com/ibcg04?tab=repositories" target="_blank" rel="noopener" class="link-github"><img src="images/github.png" alt="" width="18" height="18"><span data-en="View code">Ver código</span></a>
+                    </div>
+                    <details>
+                        <summary data-en="View evidence">Ver evidencia</summary>
+                        <iframe class="projects-evidence" src="https://www.youtube.com/embed/1J4cngHhnuI" title="NASA Space Apps" loading="lazy" allowfullscreen></iframe>
+                        <iframe class="projects-evidence" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7385775476788854784?collapsed=1" title="Publicación de LinkedIn NASA Space Apps" loading="lazy"></iframe>
+                    </details>
+                </article>
+
+                <article class="project card">
+                    <span class="tag win" data-en="🏆 Winner">🏆 Ganador</span>
+                    <h3 data-en="AgroFuturo Hackathon">Hackatón AgroFuturo</h3>
+                    <p class="meta" data-en="November 2025">Noviembre 2025</p>
+                    <p data-en="Developed the frontend of a React Native mobile app that connects farmers, investors and buyers on a single platform, easing interaction between them and promoting transparency in access to opportunities and prices.">Participé en el desarrollo del frontend de una aplicación móvil en React Native, diseñada para conectar agricultores, inversores y compradores en una sola plataforma, facilitando la interacción entre los actores y promoviendo mayor transparencia en el acceso a oportunidades y precios.</p>
+                    <ul class="chips small"><li>React Native</li><li>Mobile</li><li>Frontend</li></ul>
+                    <div class="project-links">
+                        <a href="https://github.com/ibcg04?tab=repositories" target="_blank" rel="noopener" class="link-github"><img src="images/github.png" alt="" width="18" height="18"><span data-en="View code">Ver código</span></a>
+                    </div>
+                    <details>
+                        <summary data-en="View evidence">Ver evidencia</summary>
+                        <iframe class="projects-evidence tall" src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7401651978084442113?collapsed=1" title="Publicación de LinkedIn AgroFuturo" loading="lazy"></iframe>
+                    </details>
+                </article>
+            </div>
+        </section>
+
+        <section id="referencias" class="card reveal">
+            <h2 class="subtitle" data-en="References">Referencias</h2>
+            <p class="meta refs-note" data-en="Contact details available upon request.">Datos de contacto disponibles a solicitud.</p>
+            <div class="refs-grid">
+                <article class="ref"><h3>Cristian Peña</h3><p>CTO · ControlIQ</p><a href="tel:+593983891665" class="ref-contact">0983891665</a></article>
+                <article class="ref"><h3>PhD. Carmen Vaca</h3><p data-en="Professor · ESPOL">Docente · ESPOL</p><a href="mailto:cvaca@fiec.espol.edu.ec" class="ref-contact">cvaca@fiec.espol.edu.ec</a></article>
+                <article class="ref"><h3>Lodoiska Bergelund</h3><p data-en="Children's Ministry Director · Iglesia Galilea">Directora de Ministerio de niños · Iglesia Galilea</p><a href="tel:+593988883700" class="ref-contact">0988883700</a></article>
+            </div>
+            <button type="button" class="btn btn-outline refs-toggle" aria-expanded="false" data-en="Show contact details">Mostrar datos de contacto</button>
+        </section>
+
+        <section id="contactame" class="card reveal">
+            <h2 class="subtitle" data-en="Contact me">Contáctame</h2>
+            <div class="contact-container">
+                <!-- Para envío real: crea un formulario gratis en https://formspree.io y pon tu ID en data-formspree (ej. "xyzabcd").
+                     Mientras esté vacío, el formulario usa mailto como respaldo. -->
+                <form id="contact-form" action="mailto:ivancede@espol.edu.ec" method="post" enctype="text/plain" class="contact-form" data-formspree="">
                     <div class="form-grid">
                         <div class="field">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="Nombre" required>
+                            <input type="text" id="nombre" name="Nombre" placeholder=" " required>
+                            <label for="nombre" data-en="Name">Nombre</label>
                         </div>
                         <div class="field">
-                            <label for="correo">Correo</label>
-                            <input type="email" id="correo" name="Correo" required>
+                            <input type="email" id="correo" name="Correo" placeholder=" " required>
+                            <label for="correo" data-en="Email">Correo</label>
                         </div>
                         <div class="field full">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="Mensaje" rows="9" required></textarea>
+                            <textarea id="mensaje" name="Mensaje" rows="7" placeholder=" " required></textarea>
+                            <label for="mensaje" data-en="Message">Mensaje</label>
                         </div>
                     </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn-primary">Enviar mensaje</button>
-                    </div>
+                    <button type="submit" class="btn btn-primary"><span data-en="Send message">Enviar mensaje</span></button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
                 </form>
-                <p class="note">Nota: Al hacer clic en "Enviar" se abrirá tu cliente de correo predeterminado.</p>
+                <aside class="contact-info">
+                    <a href="mailto:ivancede@espol.edu.ec"><img src="images/mail.png" alt="" width="18" height="18"><span><small>Email</small>ivancede@espol.edu.ec</span></a>
+                    <a href="tel:+593964130057"><img src="images/phone.svg" alt="" width="18" height="18"><span><small data-en="Phone">Teléfono</small>+593 96 413 0057</span></a>
+                    <a href="https://www.linkedin.com/in/ivancedenog/" target="_blank" rel="noopener"><img src="images/linkedin.png" alt="" width="18" height="18"><span><small>LinkedIn</small>ivancedenog</span></a>
+                    <a href="https://github.com/ibcg04" target="_blank" rel="noopener"><img src="images/github.png" alt="" width="18" height="18"><span><small>GitHub</small>ibcg04</span></a>
+                </aside>
             </div>
-            <aside class="contact-info-card">
-                <p><strong>Email:</strong> <a href="mailto:ivancede@espol.edu.ec">ivancede@espol.edu.ec</a></p>
-                <p><strong>Teléfono:</strong> <a href="tel:+593964130057">+593 96 413 0057</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ivancedenog/">ivancedenog</a></p>
-                <p><strong>GitHub:</strong> <a href="https://github.com/ibcg04">ibcg04</a></p>
-            </aside>
-        </div>
-    </section>
-
-    <footer>
-        <p style="text-align:center; color:#f0eeee; font-size:0.9rem; margin-top:12px;">© Iván Benjamín Cedeño Gonzabay — Currículum</p>
-    </footer>
+        </section>
     </main>
+
+    <footer class="footer">
+        <p>© <span id="year"></span> Iván Benjamín Cedeño Gonzabay</p>
+        <a href="#inicio" class="to-top" aria-label="Volver arriba">↑</a>
+    </footer>
 </body>
 
 </html>
